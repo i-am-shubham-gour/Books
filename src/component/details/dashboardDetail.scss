@@ -1,0 +1,25 @@
+div.details-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 1px;
+  align-items: center;
+  background-color: #f8f7ff;
+
+  > div.details-header {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    flex-direction: column;
+    gap: 1em;
+
+    > div.btn-with-header,.search-box {
+      display: flex;
+      width: 60%;
+    }
+
+    
+  }
+}

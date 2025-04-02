@@ -1,0 +1,77 @@
+div.home-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 1px;
+  background-color: #f8f7ff;
+
+  > div.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/src/assets/icons/Pattern.svg");
+    background-size: cover;
+    height: 10em;
+
+    > div.header-content {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      gap: 0.5em;
+
+      > div.title {
+        color: #5e56e7;
+        font-size: 3em;
+      }
+
+      > div.desc {
+        font-size: 1em;
+        color: #333333;
+      }
+    }
+  }
+
+  > div.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 1px;
+
+    > div.category {
+      display: flex;
+      width: 60%;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 2em;
+
+      > div.category-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5em;
+        background-color: white;
+        border-radius: 0.3em;
+        box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+        max-width: 20em;
+        width: 20em;
+        align-items: center;
+        cursor: pointer;
+
+        > div.category-left-content {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+
+          >div.category-name{
+            font-weight: 600;
+          }
+
+          > img {
+            width: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
