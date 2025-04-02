@@ -20,6 +20,18 @@
   overflow: hidden;
   font-family: "Montserrat";
   font-weight: 400;
+  --text-color: #5e56e7;
+  --text-color-1: #a0a0a0;
+  --text-color-2: #333333;
+  --background-color: #f8f7ff;
+  --background-color-1: #f0f0f6;
+
+  > div.not-found {
+    display: flex;
+    flex: 1 1 1px;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 600;
+  }
 }
-
-

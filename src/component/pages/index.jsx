@@ -8,7 +8,10 @@ export const Pages = () => {
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="dashboard/detail" element={<DashboardDetail />} />
       <Route path="/" element={<Navigate to="dashboard" />} />
-      <Route path="*" element={<div>Page Not Found</div>} />
+      <Route
+        path="*"
+        element={<div className="not-found">Page Not Found </div>}
+      />
     </Routes>
   );
 };

@@ -1,0 +1,28 @@
+// Define common breakpoints
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1200px,
+);
+
+// Responsive Mixin
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  // Add other breakpoints as needed
+}
+
+// Custom Breakpoint Mixin (For custom widths)
+@mixin custom-responsive($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}

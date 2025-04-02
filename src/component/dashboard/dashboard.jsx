@@ -7,6 +7,7 @@ import Humour from "../../assets/icons/Humour.svg";
 import Adventure from "../../assets/icons/Adventure.svg";
 import Politics from "../../assets/icons/Politics.svg";
 import Next from "../../assets/icons/Next.svg";
+import { useNavigate } from "react-router-dom";
 
 const category = [
   { id: 1, name: "FICTION", icon: Fiction },
@@ -19,6 +20,16 @@ const category = [
 ];
 
 export const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleSelectCategory = (name) => {
+    navigate("/dashboard/detail", {
+      state: {
+        category: name.toLowerCase(),
+      },
+    });
+  };
+
   return (
     <div className="home-container">
       <div className="header">
@@ -33,7 +44,11 @@ export const Dashboard = () => {
       <div className="content">
         <div className="category">
           {category.map((item) => (
-            <div className="category-item" key={item.id}>
+            <div
+              className="category-item"
+              key={item.id}
+              onClick={() => handleSelectCategory(item.name)}
+            >
               <div className="category-left-content">
                 <img
                   src={item.icon}

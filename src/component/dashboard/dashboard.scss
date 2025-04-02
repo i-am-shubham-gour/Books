@@ -1,8 +1,11 @@
+@use "../../mixins" as mixins;
+
 div.home-container {
   display: flex;
   flex-direction: column;
   flex: 1 1 1px;
-  background-color: #f8f7ff;
+  background-color: var(--background-color);
+  overflow: auto;
 
   > div.header {
     display: flex;
@@ -13,20 +16,38 @@ div.home-container {
     background-size: cover;
     height: 10em;
 
+    @include mixins.responsive(mobile) {
+      height: 8em;
+    }
+
     > div.header-content {
       display: flex;
       flex-direction: column;
       width: 60%;
       gap: 0.5em;
 
+      @include mixins.responsive(mobile) {
+        width: 90%;
+      }
+
       > div.title {
-        color: #5e56e7;
+        color: var(--text-color);
         font-size: 3em;
+        font-weight: 600;
+
+        @include mixins.responsive(mobile) {
+          font-size: 2.2em;
+        }
       }
 
       > div.desc {
         font-size: 1em;
         color: #333333;
+        font-weight: 600;
+
+        @include mixins.responsive(mobile) {
+          font-size: 0.7em;
+        }
       }
     }
   }
@@ -44,7 +65,13 @@ div.home-container {
       gap: 2em;
       justify-content: flex-start;
       align-items: center;
-      margin-top: 2em;
+      padding: 1.5em;
+      column-gap: 4em;
+
+      @include mixins.responsive(mobile) {
+        padding: 0.7em;
+        gap: 1em;
+      }
 
       > div.category-item {
         display: flex;
@@ -58,17 +85,39 @@ div.home-container {
         align-items: center;
         cursor: pointer;
 
+        @include mixins.responsive(mobile) {
+          padding: 0.3em;
+        }
+
         > div.category-left-content {
           display: flex;
           align-items: center;
           gap: 0.5em;
 
-          >div.category-name{
+          > div.category-name {
             font-weight: 600;
+
+            @include mixins.responsive(mobile) {
+              font-size: 0.6em;
+            }
           }
 
           > img {
             width: 1.5em;
+
+            @include mixins.responsive(mobile) {
+              width: 0.8em;
+            }
+          }
+        }
+
+        > div.category-right-content {
+          > img {
+            width: 1.5em;
+
+            @include mixins.responsive(mobile) {
+              width: 0.8em;
+            }
           }
         }
       }

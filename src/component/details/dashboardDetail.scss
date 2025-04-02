@@ -1,9 +1,11 @@
+@use "../../mixins" as mixins;
+
 div.details-container {
   display: flex;
   flex-direction: column;
   flex: 1 1 1px;
   align-items: center;
-  background-color: #f8f7ff;
+  background-color: var(--background-color);
 
   > div.details-header {
     display: flex;
@@ -15,11 +17,121 @@ div.details-container {
     flex-direction: column;
     gap: 1em;
 
-    > div.btn-with-header,.search-box {
-      display: flex;
-      width: 60%;
+    @include mixins.responsive(mobile) {
+      height: 6em;
     }
 
-    
+    > div.btn-with-header {
+      display: flex;
+      width: 65%;
+      gap: 1em;
+
+      > img.back-btn {
+        width: 1.2em;
+        cursor: pointer;
+
+        @include mixins.responsive(mobile) {
+          width: 0.9em;
+        }
+      }
+
+      > span.title {
+        font-size: 1.6em;
+        font-weight: 600;
+        color: var(--text-color);
+
+        @include mixins.responsive(mobile) {
+          font-size: 1em;
+        }
+      }
+    }
+
+    > div.search-box {
+      display: flex;
+      width: 65%;
+      gap: 1em;
+
+      > div.search-field {
+        > div.MuiInputBase-root {
+          > div.MuiInputAdornment-root {
+            > img {
+              z-index: 1;
+
+              @include mixins.responsive(mobile) {
+                width: 0.7em;
+              }
+            }
+          }
+
+          > input {
+            padding: 0.4em;
+            z-index: 1;
+            color: var(--text-color-2);
+            border-radius: 0.3em;
+            font-weight: 600;
+
+            @include mixins.responsive(mobile) {
+              padding: 0em;
+              font-size: 0.7em;
+            }
+          }
+
+          > fieldset {
+            border: none;
+            background-color: var(--background-color-1);
+            z-index: 0;
+          }
+        }
+      }
+    }
+  }
+
+  > div.no-data {
+    display: flex;
+    flex: 1 1 1px;
+    align-items: center;
+  }
+
+  > div.loader {
+    display: flex;
+    flex: 1 1 1px;
+    justify-content: center;
+    align-items: center;
+
+    > span.MuiCircularProgress-root {
+      @include mixins.responsive(mobile) {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+
+  > div.details-content {
+    display: flex;
+    flex: 1 1 1px;
+    padding: 1em;
+    flex-wrap: wrap;
+    width: 65%;
+    gap: 1em;
+    overflow: auto;
+
+    @include mixins.responsive(mobile) {
+      width: 58%;
+      padding: 0.5em;
+    }
+
+    > div.loading-indicator {
+      display: flex;
+      align-items: center;
+      width: 9em;
+      justify-content: center;
+
+      > span.MuiCircularProgress-root {
+        @include mixins.responsive(mobile) {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
   }
 }
